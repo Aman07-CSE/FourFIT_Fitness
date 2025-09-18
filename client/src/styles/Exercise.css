@@ -1,0 +1,160 @@
+/* Styling for the main container */
+.ExercisePlanner-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    width: 100%;
+    background-color: #121212; /* Dark background for a modern look */
+    padding: 22px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    margin-top: 70px; /* Space from the top */
+    background: url('./exercise.jpg') no-repeat center center/cover;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+/* Image Section */
+.image-section {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    /* background: url('./exercise.png') no-repeat center center/cover; */
+    border-radius: 8px;
+}
+
+/* Text Overlay on Image */
+.image-section .overlay-text {
+    position: absolute;
+    top: 10%; /* Position the text near the top */
+    left: 50%; /* Horizontally center the text */
+    transform: translate(-50%, -10%); /* Adjust centering (both horizontally and vertically) */
+    color: rgb(205, 211, 18); /* Text color */
+    font-size: 5.0rem; /* Adjust text size for visibility */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Align text to the center */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7); /* Add shadow for readability */
+    line-height: 1.0; /* Space out multiple lines, if any */
+    z-index: 10;
+    letter-spacing: 1.2px;
+    /* Ensure the text appears above other elements */
+}
+
+
+/* Inputs Section */
+.input-section {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+
+/* Left side: Input section */
+.inputs-container {
+    position: absolute; /* Absolute positioning relative to the parent */
+    top: 95%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to exact center */
+    width: 60%; /* Adjust width as needed */
+    padding: 30px;
+    background: rgba(78, 78, 40, 0.2); /* Semi-transparent yellow */
+    border-radius: 20px; /* Rounded corners for the rectangle */
+    box-shadow: 0 8px 30px rgba(238, 238, 87, 0.5); /* Blur effect with a yellow glow */
+    backdrop-filter: blur(10px); /* Add blur effect for the background */
+    border: 2px solid rgba(234, 246, 8, 0.6); /* Optional border for better visibility */
+    text-align: center; 
+    font-size: 5.5rem;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+/* Center the content inside */
+}
+
+
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.inputs-container .input-box,
+.inputs-container .dropdown {
+    width: 80%; /* Inputs take up 80% of the rectangle's width */
+    margin: 10px auto; /* Spacing between inputs */
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #0e0f01;
+    border-radius: 5px;
+    outline: none;
+    background: rgba(37, 37, 37, 0.86); 
+    
+    color: rgba(241, 234, 234, 0.949);
+    font-size: 1.3rem;
+    font-weight: semi-bold;
+    font-family: 'Poppins', sans-serif;/* Light background for contrast */
+}
+.custom-select option {
+    background-color: #fff; /* Background of the dropdown list */
+    color: #333;
+  }
+
+.input-box::placeholder{
+     color: rgba(241, 234, 234, 0.949);
+}
+
+
+
+.submit-button {
+    background-color:2px solid #d4e83a ;
+    margin-left: 30px;
+    color: rgb(10, 10, 10);
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+/* Hover Effect for Submit Button */
+.submit-button:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    background-color: #d9dd0b; /* Change color on hover */
+}
+
+.ready {
+    margin-top: 450px; /* Add some space between the input and the ready message */
+    margin-bottom: 20px; /* Space between the ready message and response section */
+    width: 100%;
+    text-align: center;
+    color: rgb(199, 204, 36);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.795);
+    font-size: 2.8rem;
+    font-weight: bold;
+    background: rgba(12, 12, 12, 0.292); 
+    backdrop-filter: blur(1px);
+
+  }
+
+.exercise-input:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+}
+
+/* Right side: AI response section */
+.exercise-response {
+    width: 100%;
+    margin-top: 50px;
+    padding: 30px;
+    height: 450px;
+    border: 2px solid rgba(234, 246, 8, 0.6);
+    background: rgba(52, 52, 25, 0.315); /* Semi-transparent yellow */
+    border-radius: 20px; /* Rounded corners for the rectangle */
+    box-shadow: 0 8px 30px rgba(238, 238, 87, 0.5); /* Blur effect with a yellow glow */
+    backdrop-filter: blur(20px); /* Add blur effect for the background */
+    border: 2px solid rgba(234, 246, 8, 0.6); 
+    overflow-y: auto; /* Allow scrolling for long responses */
+    transition: transform 0.2s ease; /* Animation for hover effect */
+}
+
+.exercise-response:hover {
+    transform: scale(1.02);
+}

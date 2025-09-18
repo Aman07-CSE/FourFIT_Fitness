@@ -1,0 +1,487 @@
+/* General Reset and Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Navbar Styles */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; 
+    background: linear-gradient(135deg, #333, #444);
+    z-index: 1000;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav:hover {
+    background: linear-gradient(135deg, #444, #333);
+}
+
+/* Dashboard Main Container */
+.dashboard-main-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    margin-top: 100px;
+    background-color: #1c1c1c;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+}
+
+.dashboard-main-container:hover {
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Header Section */
+.dashboard-h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Dashboard Cards */
+.dashboard-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.dashboard-card {
+    background: #333;
+    border: 2px solid #444;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-card h2 {
+    font-size: 1.25rem;
+    color: #FFD700;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.dashboard-card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Add Workout Button */
+.dashboard-button {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    margin-top: 20px;
+    background-color: #FFD700;
+    color: #1c1c1c;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-button:hover {
+    background-color: #FFC300;
+    transform: translateY(-3px);
+}
+
+.dashboard-button:active {
+    transform: translateY(1px);
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: rgba(50, 50, 50, 0.9); /* Transparent black */
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: Arial, sans-serif;
+}
+
+.modal-content h2 {
+    margin: 0 0 10px;
+    color: #FFD700;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.modal-content select,
+.modal-content input {
+    padding: 8px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    margin: 5px 0; /* Reduced spacing */
+    font-size: 1.5em;
+}
+
+.modal-content select:hover,
+.modal-content input:hover {
+    border-color: #FFD700;
+}
+
+.modal-content select:focus,
+.modal-content input:focus {
+    border-color: #FFD700;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(255, 215, 0, 0.7);
+}
+
+.modal-content button {
+    background-color: #FFD700; /* Yellow background */
+    color: #1c1c1c; /* Dark text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #FFC300; /* Slightly lighter yellow */
+}
+
+
+/* Table Styles */
+.dashboard-workout-table {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+    background-color: #222;
+    transition: transform 0.3s ease;
+}
+
+.dashboard-workout-table:hover {
+    transform: translateY(-5px);
+}
+
+.dashboard-workout-table table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.dashboard-workout-table th, .dashboard-workout-table td {
+    padding: 18px 25px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.dashboard-workout-table th {
+    background-color: #333;
+    color: #FFD700;
+}
+
+.dashboard-workout-table tr:hover {
+    background-color: #444;
+    transition: background-color 0.3s ease;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-cards {
+        flex-direction: column;
+    }
+
+    .dashboard-card {
+        margin-bottom: 20px;
+    }
+
+    .dashboard-main-container {
+        padding: 15px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+
+    .dashboard-button {
+        padding: 15px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Dashboard.css */
+/* Line Chart Container */
+.line-chart-container {
+    margin: 20px 0;
+    padding: 30px;
+    background-color: #1c1c1c; /* Dark background */
+    border: 2px solid #444; 
+    border-radius: 12px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Soft dark shadow */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.line-chart-container:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow on hover */
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* Title above the chart */
+.line-chart-container h2 {
+    text-align: center; /* Center the title */
+    margin-bottom: 20px;
+    font-size: 1.8rem; /* Larger font for emphasis */
+    color: #FFD700; /* Golden-yellow text for contrast */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for title */
+}
+
+/* Chart Responsiveness */
+.recharts-wrapper {
+    max-width: 100%; /* Responsive width */
+    height: 100%; /* Adjust chart height */
+    overflow-x: hidden; /* Prevent overflow */
+}
+
+/* Tooltip customization */
+.recharts-tooltip-wrapper {
+    background-color: rgba(30, 30, 30, 0.95); /* Dark semi-transparent background */
+    color: #FFD700; /* Golden-yellow text for tooltip */
+    border: 1px solid #444; /* Subtle dark border */
+    border-radius: 8px; /* Rounded tooltip */
+    padding: 12px; /* Spacious padding */
+    font-size: 0.9rem; /* Smaller font for tooltip */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
+}
+
+/* Legend */
+.recharts-legend-wrapper {
+    text-align: center; /* Center align the legend */
+    font-size: 1rem; /* Modern font size */
+    color: #FFD700; /* Golden-yellow text */
+}
+
+/* Axis Labels */
+.recharts-cartesian-axis text {
+    fill: #FFD700; /* Golden-yellow axis labels */
+    font-size: 1rem; /* Readable font size */
+    font-weight: 500; /* Slightly bold for emphasis */
+}
+
+/* Grid Lines */
+.recharts-cartesian-grid line {
+    stroke: #444; /* Darker gray grid lines */
+    stroke-dasharray: 3 3; /* Dashed lines for modern styling */
+    opacity: 0.5; /* Subtle grid line visibility */
+}
+
+/* Line Chart Line */
+.recharts-line {
+    stroke: #FFD700; /* Golden-yellow line */
+    stroke-width: 3; /* Thicker line for prominence */
+    transition: stroke-dasharray 0.3s ease, stroke-width 0.3s ease;
+}
+
+.recharts-line:hover {
+    stroke-dasharray: 6 2; /* Add dashed effect on hover */
+    stroke-width: 4; /* Thicker stroke on hover */
+}
+
+/* Active Dot */
+.recharts-active-dot circle {
+    fill: #FFD700; /* Golden-yellow fill for the active dot */
+    stroke: #333; /* Dark border for the dot */
+    stroke-width: 2; /* Border width for definition */
+    r: 8; /* Slightly larger active dot */
+    transition: transform 0.2s ease;
+}
+
+.recharts-active-dot circle:hover {
+    transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+/* Animations for Hover Effects */
+.line-chart-container:hover .recharts-line {
+    stroke-dasharray: 6 2; /* Dashed line effect on hover */
+}
+
+/* Interaction Effects */
+.recharts-cartesian-axis text:hover {
+    fill: #fff; /* Brighten axis labels on hover */
+    cursor: pointer;
+}
+
+.recharts-tooltip-wrapper:hover {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow for tooltip */
+}
+/* Style the scrollbar */
+::-webkit-scrollbar {
+    width: 12px; /* Set width for vertical scrollbar */
+    height: 12px; /* Set height for horizontal scrollbar */
+}
+
+/* Track (background) of the scrollbar */
+::-webkit-scrollbar-track {
+    background: #2c2c2c; /* Darker background for the scrollbar track */
+    border-radius: 10px; /* Rounded corners for smooth appearance */
+}
+
+/* Handle (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+    background-color: #555; /* Dark thumb for contrast */
+    border-radius: 10px; /* Rounded corners */
+    border: 3px solid #2c2c2c; /* Slight border to match the track */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #FFD700; /* Golden-yellow when hovered */
+}
+
+
+/* Flex container for layout */
+.charts-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow charts to stack on small screens */
+    gap: 20px; /* Space between charts */
+    margin-bottom: 30px;
+  }
+  
+  /* Individual chart wrapper with dark theme and scroll effects */
+  .chart-wrapper {
+    flex: 1; /* Each chart takes equal space */
+    min-width: 300px; /* Minimum width before stacking */
+    background-color: #1c1c1c; /* Dark background */
+    padding: 20px; /* Adjusted padding slightly */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slightly darker shadow */
+    /* Border needs contrast on dark bg */
+    border: 1px solid #444; /* Darker grey border */
+    color: #e0e0e0; /* Default light text color for elements inside */
+  
+    /* CRITICAL: Enable scrolling when content overflows */
+    overflow: auto; /* Shows scrollbars only when needed (use 'scroll' to always show) */
+  
+    /* --- Firefox Scrollbar Styles --- */
+    scrollbar-width: thin; /* Make scrollbar thin */
+    scrollbar-color: #555 #2c2c2c; /* thumb color | track color */
+  }
+  
+  /* Title inside the wrapper - Make text light */
+  .chart-wrapper h2 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 1.3em; /* Adjusted size */
+    /* IMPORTANT: Use a light color for readability on dark background */
+    color: #ffffff; /* White */
+    margin-bottom: 20px; /* Increased spacing */
+  }
+  
+  /* 'No data' message - Make text lighter */
+  .chart-wrapper p {
+    text-align: center;
+    /* IMPORTANT: Use a lighter grey for readability */
+    color: #a0a0a0; /* Light grey */
+  }
+  
+  
+  /* --- WebKit Scrollbar Styles (Chrome, Safari, Edge) --- */
+  /* Apply specifically to the chart wrapper */
+  .chart-wrapper::-webkit-scrollbar {
+    width: 10px; /* Width of vertical scrollbar */
+    height: 10px; /* Height of horizontal scrollbar */
+  }
+  
+  .chart-wrapper::-webkit-scrollbar-track {
+    background: #2c2c2c; /* Dark background for the track */
+    border-radius: 5px; /* Rounded track */
+  }
+  
+  .chart-wrapper::-webkit-scrollbar-thumb {
+    background-color: #555; /* Darker grey for the draggable thumb */
+    border-radius: 5px; /* Rounded thumb */
+    border: 2px solid #2c2c2c; /* Creates a small border matching the track */
+  }
+  
+  /* Thumb style on hover */
+  .chart-wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: #777; /* Slightly lighter grey on hover */
+  }
+  
+  
+  /* --- Data Table Styles (Keeping Light Theme) --- */
+  .dashboard-data-table {
+    margin-top: 20px;
+    background-color: #fff; /* Light background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid #dee2e6; /* Light border */
+    overflow-x: auto; /* Allow horizontal scrolling */
+  }
+  /* Add the rest of your .dashboard-data-table styles here (th, td, etc.) */
+  .dashboard-data-table h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #343a40;
+  }
+  .dashboard-data-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .dashboard-data-table th,
+  .dashboard-data-table td {
+    border: 1px solid #dee2e6;
+    padding: 10px 12px;
+    text-align: left;
+    white-space: nowrap;
+     color: #212529;
+  }
+  .dashboard-data-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #495057;
+  }
+  /* ... etc ... */

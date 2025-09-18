@@ -1,0 +1,224 @@
+/* Chatbot toggle button */
+.chatbot-toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #FFEA00;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1001;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, filter 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.chatbot-toggle-btn:hover {
+    background-color: #86a815;
+    transform: scale(1); /* Slightly enlarge button on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    filter: brightness(1.2);
+}
+
+/* Styling for the main chatbot container */
+.chatbot-container {
+    display: flex;
+    flex-direction: column;  /* Stack input and response vertically */
+    width: 40%; /* Takes up half of the page width (right side) */
+    height: 100vh; /* Takes up full height of the viewport */
+    background-color: rgba(18, 18, 18, 0.95); /* Dark transparent background */
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    margin-top: 70px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it's above other elements */
+    border-radius: 15px 15px 0 0; /* Rounded top corners */
+    transform: translateY(100%); /* Initially off-screen */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chatbot-container.active {
+    transform: translateY(0); /* Chatbot slides into view */
+}
+
+/* Left side: Input section */
+.chat-input {
+    width: 100%; /* Takes up full width of container */
+    padding: 15px;
+    background-color: #1E1E1E;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    flex: 1; /* Allow it to take up available space */
+    overflow-y: auto;
+    margin-bottom: 15px; /* Space between input and response section */
+    transition: background-color 0.3s ease;
+}
+
+.chat-input:hover {
+    background-color: #2A2A2A;
+}
+
+/* Right side: AI response section */
+.chat-response {
+    width: 100%; /* Takes up full width of container */
+    padding: 15px;
+    background-color: #2A2A2A;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    flex: 1; /* Allow it to take up available space */
+    overflow-y: auto;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chat-response:hover {
+    background-color: #333;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Chatbot input form fields */
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #3A3A3A;
+    border: 1px solid #555;
+    border-radius: 8px;
+    color: #E0E0E0;
+    font-size: 16px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #FFEA00;
+    outline: none;
+    background-color: #1E1E1E;
+}
+
+/* Submit button */
+button {
+    padding: 12px 18px;
+    background-color: #FFEA00;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.button-container {
+    display: flex;
+    gap: 10px;
+    justify-content:flex-start;
+}
+
+
+button:hover {
+    background-color: #FFD600;
+    transform: translateY(-2px); /* Lift the button on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for the AI response (similar to ChatGPT) */
+.chat-response h2 {
+    font-size: 2em;
+    color: #FFEA00; /* Bright yellow for emphasis */
+    margin-bottom: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.chat-response p {
+    color: #E0E0E0;
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.chat-response pre {
+    background-color: #1E1E1E;
+    color: #FFD600;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+.chat-response code {
+    background-color: #2A2A2A;
+    color: #FFD600;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+/* Animation for fading in new messages */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.chat-response p, .chat-response pre {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .chatbot-container {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .chatbot-toggle-btn {
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .chatbot-container .chat-input, .chatbot-container .chat-response {
+        max-height: none; /* Allow unlimited height on smaller screens */
+    }
+
+    .chatbot-container.active {
+        transform: translateY(0); /* Chatbot slides in smoothly */
+    }
+}
+/* Style the scrollbar */
+::-webkit-scrollbar {
+    width: 12px; /* Set width for vertical scrollbar */
+    height: 12px; /* Set height for horizontal scrollbar */
+}
+
+/* Track (background) of the scrollbar */
+::-webkit-scrollbar-track {
+    background: #2c2c2c; /* Darker background for the scrollbar track */
+    border-radius: 10px; /* Rounded corners for smooth appearance */
+}
+
+/* Handle (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+    background-color: #555; /* Dark thumb for contrast */
+    border-radius: 10px; /* Rounded corners */
+    border: 3px solid #2c2c2c; /* Slight border to match the track */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #FFD700; /* Golden-yellow when hovered */
+}

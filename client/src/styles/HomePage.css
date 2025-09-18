@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Kablammo&family=Londrina+Sketch&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+.hero {
+  min-height: 100vh;
+  position: relative;
+  background-size: cover; /* Ensures the background covers the hero section */
+  background-position: center center; /* Centers the background image */
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 150px 0 70px 0;
+  padding-left: 7rem;
+
+  /* Add keyframe animation */
+  animation: changeBackground 14s infinite; /* 4 images, 3 seconds each */
+  background-blend-mode:darken;
+}
+
+/* Keyframes for background images animation */
+@keyframes changeBackground {
+  0% {
+    background: url(./img12.jpg) rgba(0, 0, 0, 0.75);
+    background-size: cover;
+    background-position: center 30%; /* Push the image down */
+  }
+  25% {
+    background: url(./img14.jpg) rgba(0, 0, 0, 0.75);
+    background-size: cover;
+    background-position: center 30%; /* Push the image down */
+  }
+  50% {
+    background: url(./img16.jpg) rgba(0, 0, 0, 0.75);
+    background-size: cover;
+    background-position: center 30%; /* Push the image down */
+  }
+  75% {
+    background: url(./img3.jpg) rgba(0, 0, 0, 0.75);
+    background-size: cover;
+    background-position: center 30%; /* Push the image down */
+  }
+  100% {
+    background: url(./img12.jpg) rgba(0, 0, 0, 0.75); /* Loop back to first image */
+    background-size: cover;
+    background-position: center 30%; /* Push the image down */
+  }
+}
+
+.hero .content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.hero .content .title {
+  color: whitesmoke;
+  font-size: 4rem;
+}
+
+.hero .content .sub-title p {
+  font-family: 'Playwrite England SemiJoined', cursive;
+  font-weight: 400;
+  color: whitesmoke;
+  font-size: 1.8rem;
+  line-height: 45px;
+}
+
+.hero .content .sub-title p:last-child {
+  color: #ffea00;
+}
+
+.hero .content .buttons {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.hero .content .buttons button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: #ffea00;
+  border: 1px solid #ffea00;
+  background: transparent;
+  transition: 0.3s;
+}
+
+.hero .content .buttons button:hover {
+  cursor: pointer;
+  background: #ffcc00ef;
+  color: rgb(0, 0, 0);
+  transition: 0.3s;
+}
+
+@media (max-width: 1050px) {
+  .hero {
+    padding-left: 2.5rem;
+  }
+  header {
+    margin-left: 2.5rem;
+  }
+  .hero .content .title {
+    font-size: 2.75rem;
+  }
+  .hero .content .sub-title p {
+    font-size: 1.3rem;
+    line-height: normal;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 880px) {
+  .hero {
+    background-position: center 30%;
+  }
+  .hero .content .title {
+    font-size: 2.45rem;
+  }
+  .hero .content .sub-title p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    background-position: center 30%;
+  }
+  .hero .content .title {
+    font-size: 2.2rem;
+  }
+  .hero .content .sub-title p {
+    font-size: 1rem;
+  }
+  .hero .content .buttons button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 467px) {
+  .hero {
+    padding-left: 1rem;
+  }
+  header {
+    margin-left: 1rem;
+  }
+  .hero .content .buttons {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+}/* CSS for Video (below the hero section, responsive) */
+.background-video {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+
+.features {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  padding: 50px 20px;
+  align-items: center;
+}
+
+.features-heading, .features-quote {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+}
+
+.features-container {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.features-image {
+  width: 40%;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.features-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.card {
+  background: linear-gradient(45deg, #dece19, rgb(201, 109, 51) 100%);
+  color: var(--bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  transition: transform 0.5s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background-color: #444;
+  background: linear-gradient(135deg, #dece19, rgb(201, 109, 51) 100%);
+  transition: ease-in-out 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+}
+
+.features-heading {
+  font-size: 2.5rem;
+  color: #ffea00;
+  margin-bottom: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.features-heading:hover{
+  transform: scale(1.1);
+}
+
+.features-quote {
+  font-size: 1.5rem;
+  color: #fff;
+  font-style: italic;
+  margin-bottom: 30px;
+  transition: 0.3s ease-in-out;
+}
+
+.features-quote:hover {
+  transform: scale(1.5);
+  
+}
+
+@media (max-width: 768px) {
+  .features {
+    padding: 20px;
+  }
+
+  .features-image {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .features-cards {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-us {
+  text-align: center;
+  padding: 2rem;
+  overflow: hidden; /* Prevent overflow from this section */
+}
+
+.about-us-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: rgb(230, 177, 34); /* Title color */
+  transition: 0.3s ease-in-out;
+}
+
+.about-us-title:hover {
+  transform: scale(1.1);
+}
+
+.about-us-description {
+  color: #ffffff; /* Text color set to white */
+  font-size: 1.4rem; /* Font size */
+  max-width: 1100px; /* Increased maximum width */
+  margin: 0 auto 20px; /* Center the text and add space below */
+  line-height: 1.8; /* Increased line height for readability */
+  padding: 0 20px; /* Horizontal padding for extra spacing */
+}
+
+.about-us-cards {
+  display: flex;
+  justify-content: center; /* Center the cards */
+  flex-wrap: wrap; /* Allow cards to wrap to the next line */
+  overflow-x: hidden; /* Hide horizontal overflow */
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
+}
+
+.about-us-card {
+  background-color: #000000; /* Card background color */
+  width: 150px; /* Further reduced width to avoid overflow */
+  border-radius: 8px; /* Rounded corners */
+  padding: 1rem; 
+  margin: 30px; /* Add some margin for space between cards */
+  transition: ease-in-out 0.3s, box-shadow 0.3s; 
+  text-align: center; 
+  color: #ffea00; /* Text color in cards */
+  border: 1px solid #ffea00; /* Added yellow border */
+}
+
+.about-us-card:hover {
+  transition: ease-in-out 0.3s, box-shadow 0.3s;
+  border: 1px solid #fdfdfd; 
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  
+}
+
+.about-us-image {
+  width: 110px; /* Increased image size */
+  height: 110px; /* Increased height to match width */
+  border-radius: 50%; /* Keep it circular */
+  object-fit: cover; /* Maintain aspect ratio */
+  border: none; /* Remove any border */
+  transition: filter 0.3s ease;
+  filter: grayscale(100%); /* Start in black and white */
+}
+.about-us-image:hover {
+  filter: grayscale(0%); /* Make image black and white */
+}
+
+
+.about-us-member-name {
+  font-weight: semibold;
+  font-size: 1.4rem; /* Font size for names */
+  margin: 1rem 0; /* Increased margin for more spacing (top and bottom) */
+  color: #d3d3d2; /* Name color */
+}
+
+.about-us-member-work {
+  font-size: 1.2rem; /* Font size for roles */
+  color: #ffffff; /* Subtle contrast for roles */
+}
+
+
+.gallery {
+  background: #000000;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 100px 0 50px 0;
+}
+
+.gallery h1 {
+  color:  rgb(230, 177, 34);
+  font-size: 3rem;
+  margin: 0 auto;
+  letter-spacing: 1px;
+  transition: 0.3s ease-in-out;
+}
+.gallery h1:hover{
+  transform: scale(1.1);
+}
+.gallery .images {
+  display: flex;
+  gap: 15px;
+  max-width: 1500px;
+  min-width: 1500px;
+  margin: 0 auto;
+  transition: 0.3s ease-in-out;
+}
+
+.gallery .images div {
+  flex: 1;
+}
+
+.gallery .images img {
+  width: 100%;
+  height: auto;
+}
+.gallery .images img:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+}
+
+
+@media (max-width: 1520px) {
+  .gallery {
+    padding: 50px 20px 50px 20px;
+  }
+  .gallery .images {
+    min-width: 100%;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .gallery h1 {
+    font-size: 1.6rem;
+  }
+}
+
+.Footer {
+  padding: 40px 20px;
+  background-color: #cfbe07; 
+  font-size: 1.6rem;
+  color: #000000;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.social-links {
+  list-style: none;
+  padding: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.social-links li {
+  margin: 0 10px;
+}
+
+.social-links a {
+  color: #124fdd;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+  color: #c70000b6;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.chatbot-shortcut {
+  position: fixed;
+  bottom: 20px;  /* Adjust as needed */
+  right: 20px;   /* Adjust as needed */
+  background-color: #ffc20e;
+  color: black;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 1001;  /* Ensure it's above other elements */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s ease;
+}
+
+.chatbot-shortcut:hover {
+  background-color: #FFD600;
+}
+/* Style the scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* Set width for vertical scrollbar */
+  height: 12px; /* Set height for horizontal scrollbar */
+}
+
+/* Track (background) of the scrollbar */
+::-webkit-scrollbar-track {
+  background: #2c2c2c; /* Darker background for the scrollbar track */
+  border-radius: 10px; /* Rounded corners for smooth appearance */
+}
+
+/* Handle (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+  background-color: #555; /* Dark thumb for contrast */
+  border-radius: 10px; /* Rounded corners */
+  border: 3px solid #2c2c2c; /* Slight border to match the track */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #FFD700; /* Golden-yellow when hovered */
+}

@@ -1,0 +1,214 @@
+/* Styling for the main container */
+.dashboard-main-container {
+    max-width: 120px;
+    margin: 30px auto;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #1c1c1c;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+}
+
+.dashboard-main-container:hover {
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+}
+
+.dietPlanner-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 700px;
+    background-color: #121212; /* Dark background for a modern look */
+    padding: 22px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    margin-top: 45px; /* Increased top margin to avoid overlap with the navbar */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+/* Left side: Input section */
+.diet-input {
+    width: 40%;
+    padding: 20px;
+    background-color: #c0db7300; /* Darker gray for input section */
+    box-shadow: 0 0 10px rgba(188, 212, 139, 0.1);
+    border-radius: 8px;
+    transition: transform 0.2s ease; /* Animation for hover effect */
+}
+
+.genderSelect {
+    display: flex;
+    align-items: center; 
+    gap: 30px;
+}
+
+.genderSelect label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px; 
+    padding: 4px 55px;
+    border: 2px solid #555; /* Subtle border */
+    border-radius: 20px; /* Rounded corners for pill-shaped buttons */
+    background-color: #3A3A3A; /* Dark gray background */
+    color: #E0E0E0; /* Light text color */
+    font-size: 16px; /* Smaller font size */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.diet-input:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+}
+
+/* Right side: AI response section */
+.diet-response {
+    width: 55%;
+    padding: 20px;
+    height: 620px;
+    background-color: #2A2A2A; /* Slightly lighter gray for response section */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow-y: auto; /* Allow scrolling for long responses */
+    transition: transform 0.2s ease; /* Animation for hover effect */
+}
+
+.diet-response:hover {
+    transform: scale(1.02);
+}
+
+/* Chat response box */
+#responseBox {
+    padding: 15px;
+    background-color: #222222; /* Match input field color for consistency */
+    border-radius: 8px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column; /* Arrange content in a column */
+    color: #E0E0E0; /* Light gray text for visibility */
+    font-size: 16px; /* Increase text size for better readability */
+    animation: fadeIn 0.5s; /* Fade-in animation for new responses */
+}
+
+/* Headings */
+#responseBox h2, #responseBox h3 {
+    margin: 10px 0;
+    font-size: 1.5em; /* Heading size */
+    color: #FFEA00; /* Bright yellow for headings for emphasis */
+}
+
+/* Paragraph styling */
+#responseBox p {
+    margin: 5px 0; /* Space between paragraphs */
+}
+
+/* List styling */
+#responseBox ul {
+    margin: 10px 0; /* Space above and below lists */
+    padding-left: 20px; /* Indent for lists */
+}
+
+/* List items */
+#responseBox li {
+    margin: 5px 0; /* Space between list items */
+}
+
+/* Code block styling */
+#responseBox code {
+    background-color: #2A2A2A; /* Slightly lighter background for code */
+    padding: 2px 5px;
+    border-radius: 4px;
+    color: #FFD600; /* Color for code text */
+}
+
+/* Form styling */
+input, select, label, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #3A3A3A; /* Medium gray for input fields */
+    border: 1px solid #555; /* Slightly darker gray border */
+    border-radius: 5px;
+    color: #E0E0E0; /* Light gray text */
+    font-size: 16px; /* Increase text size for better readability */
+    transition: border-color 0.2s ease; /* Smooth border color transition */
+}
+
+input:focus, select:focus, label:focus, textarea:focus {
+    border-color: #FFEA00; /* Highlight border on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Error and success states */
+input.error {
+    border-color: #FF0000; /* Red border for errors */
+    background-color: #3A1A1A; /* Subtle red tint */
+}
+
+input.success {
+    border-color: #00FF00; /* Green border for success */
+    background-color: #1A3A1A; /* Subtle green tint */
+}
+
+/* Submit button */
+button {
+    padding: 10px 15px;
+    background-color: #FFEA00; /* Bright yellow for button */
+    color: black; /* Black text for contrast */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px; /* Increase text size for better readability */
+    transition: background-color 0.2s ease, transform 0.2s ease; /* Smooth button transitions */
+}
+
+button:hover {
+    background-color: #FFD600; /* Darker yellow on hover */
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Animation for fading in new messages */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Style the scrollbar */
+::-webkit-scrollbar {
+    width: 12px; /* Set width for vertical scrollbar */
+    height: 12px; /* Set height for horizontal scrollbar */
+}
+
+/* Track (background) of the scrollbar */
+::-webkit-scrollbar-track {
+    background: #2c2c2c; /* Darker background for the scrollbar track */
+    border-radius: 10px; /* Rounded corners for smooth appearance */
+}
+
+/* Handle (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+    background-color: #555; /* Dark thumb for contrast */
+    border-radius: 10px; /* Rounded corners */
+    border: 3px solid #2c2c2c; /* Slight border to match the track */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #FFD700; /* Golden-yellow when hovered */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .dietPlanner-container {
+        flex-direction: column; /* Stack sections vertically */
+        height: auto; /* Adjust height for stacking */
+    }
+    .diet-input, .diet-response {
+        width: 100%; /* Make sections full-width */
+        margin-bottom: 20px; /* Add spacing between stacked sections */
+    }
+}

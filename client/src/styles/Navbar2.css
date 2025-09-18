@@ -1,0 +1,198 @@
+/* src/styles/Navbar.css */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Kablammo&family=Londrina+Sketch&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+
+section{
+  min-height: 100vh;
+  padding: 10rem 8% 2rem;
+}
+header{
+    padding: 1rem 9%;
+    background: rgba(8, 8, 8, 0.667);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    transition: all 0.5s ease;
+}
+.logo{
+  font-size: 3rem;
+  color: var(--text-color);
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  margin-right: 1rem;
+}
+.logo:hover{
+  transform: scale(1.1);
+}
+span{
+  color: var(--main-color);
+}
+
+
+
+.navbar{
+  display: flex;
+}
+.navbar a{
+    /*font-family: 'Londrina Sketch', cursive;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: 'Playwrite England SemiJoined', cursive;
+    color: var(--text-color);
+    margin-left: 3rem;
+    transition: 0.5s;
+    border-bottom: 3px solid transparent;*/
+
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-left: 3rem;
+    font-style: normal;
+    transition: 0.5s;
+    border-bottom: 3px solid transparent;
+    
+}
+.navbar a:hover,
+.navbar a.active{
+  color: var(--main-color);
+  border-bottom: 2px solid var(--main-color);
+}
+.nav-btn{
+    display: inline-block;
+    color: var(--main-color);
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 1rem 2.8rem;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    border-radius: 1rem;
+    transition: 0.5s;
+    margin-left: 2rem;
+}
+.nav-btn:hover{
+  background: var(--main-color);
+  color: black;
+  box-shadow: 0 0 18px var(--main-color);
+}
+
+/* --- Keep your existing desktop styles above this --- */
+
+/* --- Hamburger Icon --- */
+#menu-icon {
+  font-size: 2.5rem;
+  color: var(--text-color, white); /* Added fallback color */
+  cursor: pointer;
+  display: none; /* Hide on desktop */
+  z-index: 1001;
+  /* Basic styling for the container */
+  padding: 5px;
+}
+/* Basic spans for the icon */
+#menu-icon span {
+  display: block;
+  background-color: var(--text-color, white); /* Fallback */
+  height: 3px;
+  width: 25px; /* Adjust size */
+  margin: 5px 0; /* Spacing */
+  transition: all 0.3s ease-in-out;
+  border-radius: 3px;
+}
+
+/* --- Mobile Styles --- */
+@media (max-width: 991px) {
+  header {
+      padding: 1rem 4%;
+  }
+
+  #menu-icon {
+      display: block; /* Show hamburger icon */
+  }
+  /* Optional: Animate to 'X' */
+   #menu-icon.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+   #menu-icon.open span:nth-child(2) { opacity: 0; }
+   #menu-icon.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  .navbar {
+      /* Mobile hidden state */
+      position: absolute;
+      top: var(--nav-height, 7rem); /* Position below header (ensure --nav-height is set or use a fixed value) */
+      left: 0;
+      width: 100%;
+      background: var(--bg-color, rgba(8, 8, 8, 0.95)); /* Darker fallback */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+      margin: 0; /* Reset margin */
+      list-style: none;
+
+      /* Use transform for performance & smoother animation */
+      transform: translateY(-150%); /* Start far above, off-screen */
+      opacity: 0;
+      transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+      pointer-events: none; /* Prevent interaction when hidden */
+      z-index: 999; /* Below header but above content */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      min-height: calc(100vh - var(--nav-height, 7rem)); /* Optional: fill screen */
+      box-sizing: border-box;
+  }
+
+  .navbar.active {
+      /* Mobile visible state */
+      transform: translateY(0); /* Slide down into view */
+      opacity: 1;
+      pointer-events: auto; /* Allow interaction */
+  }
+
+  .navbar li {
+    width: 100%; /* Make list items take full width */
+    text-align: center;
+  }
+
+  .navbar a {
+      display: block; /* Stack links vertically */
+      margin: 1rem 0;
+      padding: 0.5rem 0; /* Add padding for easier clicking */
+      font-size: 1.8rem;
+      color: var(--text-color, white); /* Fallback */
+      border-bottom: none; /* Remove desktop border */
+      width: 100%;
+  }
+  .navbar a:hover,
+  .navbar a.active {
+      color: var(--main-color, orange); /* Fallback */
+      background-color: rgba(255, 255, 255, 0.1); /* Subtle hover */
+      border-bottom: none;
+  }
+
+  .top-btn {
+      display: none; /* Hide desktop button */
+  }
+
+  /* Show mobile buttons */
+  .navbar li.mobile-login-link,
+  .navbar li.mobile-logout-btn {
+      display: block;
+      margin-top: 1.5rem;
+      padding-bottom: 1rem; /* Add some space at the bottom */
+  }
+   .navbar li.mobile-login-link .nav-btn,
+  .navbar li.mobile-logout-btn .nav-btn {
+     display: inline-block; /* Make sure button styles apply */
+     width: auto;
+  }
+}
+
+/* Hide mobile buttons on desktop */
+.navbar li.mobile-login-link,
+.navbar li.mobile-logout-btn {
+  display: none;
+}

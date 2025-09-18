@@ -1,0 +1,113 @@
+/* --- Keep your existing desktop styles above this --- */
+
+/* --- Hamburger Icon --- */
+#menu-icon {
+  font-size: 2.5rem;
+  color: var(--text-color, white); /* Added fallback color */
+  cursor: pointer;
+  display: none; /* Hide on desktop */
+  z-index: 1001;
+  /* Basic styling for the container */
+  padding: 5px;
+}
+/* Basic spans for the icon */
+#menu-icon span {
+  display: block;
+  background-color: var(--text-color, white); /* Fallback */
+  height: 3px;
+  width: 25px; /* Adjust size */
+  margin: 5px 0; /* Spacing */
+  transition: all 0.3s ease-in-out;
+  border-radius: 3px;
+}
+
+/* --- Mobile Styles --- */
+@media (max-width: 991px) {
+  header {
+      padding: 1rem 4%;
+  }
+
+  #menu-icon {
+      display: block; /* Show hamburger icon */
+  }
+  /* Optional: Animate to 'X' */
+   #menu-icon.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+   #menu-icon.open span:nth-child(2) { opacity: 0; }
+   #menu-icon.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  .navbar {
+      /* Mobile hidden state */
+      position: absolute;
+      top: var(--nav-height, 7rem); /* Position below header (ensure --nav-height is set or use a fixed value) */
+      left: 0;
+      width: 100%;
+      background: var(--bg-color, rgba(8, 8, 8, 0.95)); /* Darker fallback */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+      margin: 0; /* Reset margin */
+      list-style: none;
+
+      /* Use transform for performance & smoother animation */
+      transform: translateY(-150%); /* Start far above, off-screen */
+      opacity: 0;
+      transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+      pointer-events: none; /* Prevent interaction when hidden */
+      z-index: 999; /* Below header but above content */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      min-height: calc(100vh - var(--nav-height, 7rem)); /* Optional: fill screen */
+      box-sizing: border-box;
+  }
+
+  .navbar.active {
+      /* Mobile visible state */
+      transform: translateY(0); /* Slide down into view */
+      opacity: 1;
+      pointer-events: auto; /* Allow interaction */
+  }
+
+  .navbar li {
+    width: 100%; /* Make list items take full width */
+    text-align: center;
+  }
+
+  .navbar a {
+      display: block; /* Stack links vertically */
+      margin: 1rem 0;
+      padding: 0.5rem 0; /* Add padding for easier clicking */
+      font-size: 1.8rem;
+      color: var(--text-color, white); /* Fallback */
+      border-bottom: none; /* Remove desktop border */
+      width: 100%;
+  }
+  .navbar a:hover,
+  .navbar a.active {
+      color: var(--main-color, orange); /* Fallback */
+      background-color: rgba(255, 255, 255, 0.1); /* Subtle hover */
+      border-bottom: none;
+  }
+
+  .top-btn {
+      display: none; /* Hide desktop button */
+  }
+
+  /* Show mobile buttons */
+  .navbar li.mobile-login-link,
+  .navbar li.mobile-logout-btn {
+      display: block;
+      margin-top: 1.5rem;
+      padding-bottom: 1rem; /* Add some space at the bottom */
+  }
+   .navbar li.mobile-login-link .nav-btn,
+  .navbar li.mobile-logout-btn .nav-btn {
+     display: inline-block; /* Make sure button styles apply */
+     width: auto;
+  }
+}
+
+/* Hide mobile buttons on desktop */
+.navbar li.mobile-login-link,
+.navbar li.mobile-logout-btn {
+  display: none;
+}
